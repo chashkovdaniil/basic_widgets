@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'likes_counter.dart';
+import 'modules/likes/likes_counter.dart';
 
 class MyInfo extends StatelessWidget {
   const MyInfo({Key? key}) : super(key: key);

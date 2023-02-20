@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
-import 'assets.dart';
+import 'utils/assets.dart';
 
 class SocialButtons extends StatelessWidget {
   const SocialButtons({super.key});
@@ -27,11 +27,11 @@ class SocialButtons extends StatelessWidget {
   }
 
   void _onVkButtonTap() async {
-    const vkUrl = 'https://vk.com/way_of_anaconda';
-    final canLaunch = await canLaunchUrlString(vkUrl);
-    if (canLaunch) {
-      await launchUrlString(vkUrl);
-    }
+    // const vkUrl = 'https://vk.com/way_of_anaconda';
+    // final canLaunch = await canLaunchUrlString(vkUrl);
+    // if (canLaunch) {
+    //   await launchUrlString(vkUrl);
+    // }
   }
 
   void _onTelegramButtonTap() async {

@@ -8,12 +8,32 @@ class Feedbacks extends StatefulWidget {
 }
 
 class _FeedbacksState extends State<Feedbacks> {
-  final textController = TextEditingController();
+  late final TextEditingController textController;
   final feedbacks = ['Блин! Круто!!!', 'Все хорошо сделано!'];
+
+  @override
+  void initState() {
+    super.initState();
+    textController = TextEditingController();
+    print('[Lifecycle] initState');
+  }
+
+  @override
+  void didUpdateWidget(covariant Feedbacks oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    print('[Lifecycle] didUpdateWidget');
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    print('[Lifecycle] didChangeDependencies');
+  }
 
   @override
   void dispose() {
     textController.dispose();
+    print('[Lifecycle] dispose');
     super.dispose();
   }
 
