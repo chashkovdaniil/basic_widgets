@@ -1,3 +1,4 @@
+import 'package:basic_widgets/modules/likes/likes_inherited/likes_notifier.dart';
 import 'package:flutter/material.dart';
 
 class LikesCounter extends StatelessWidget {
@@ -6,6 +7,12 @@ class LikesCounter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+
+    /// NOTIFIER
+    final likes = LikesInheritedNotifier.depend(context)?.likes ?? 0;
+
+    /// INHERITEDWIDGET
+    // final likes = LikesInheritedWidget.of(context)?.amountLikes ?? 0;
 
     return Container(
       decoration: BoxDecoration(
@@ -31,12 +38,12 @@ class LikesCounter extends StatelessWidget {
           ),
           const SizedBox(width: 10),
           Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Colors.white,
               shape: BoxShape.circle,
             ),
-            padding: EdgeInsets.all(10),
-            child: Text('1'),
+            padding: const EdgeInsets.all(10),
+            child: Text('$likes'),
           ),
         ],
       ),

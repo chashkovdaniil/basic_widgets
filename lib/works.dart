@@ -18,8 +18,8 @@ class Works extends StatelessWidget {
   Widget build(BuildContext context) {
     return ConstrainedBox(
       constraints: const BoxConstraints(
-        minHeight: 120,
-        maxHeight: 200,
+        minHeight: 200,
+        maxHeight: 210,
       ),
       child: RotatedBox(
         quarterTurns: 1,

@@ -22,4 +22,11 @@ class LikesInheritedWidget extends InheritedWidget {
 
     return widget;
   }
+
+  static LikesInheritedWidget? depend(BuildContext context) {
+    final widget =
+        context.dependOnInheritedWidgetOfExactType<LikesInheritedWidget>();
+
+    return widget;
+  }
 }

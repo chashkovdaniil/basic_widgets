@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'modules/likes/likes_inherited/likes_notifier.dart';
 import 'stateless.dart';
 
 void main() {
@@ -11,18 +12,24 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Basic Widgets',
-      theme: ThemeData(
-        primarySwatch: Colors.blueGrey,
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: buildElevatedButtonStyle(),
+    /// NOTIFIER
+    return LikesInheritedNotifier(
+      /// INHERITED
+      // return LikesInheritedWidget(
+      initialLikes: 1,
+      child: MaterialApp(
+        title: 'Basic Widgets',
+        theme: ThemeData(
+          primarySwatch: Colors.blueGrey,
+          elevatedButtonTheme: ElevatedButtonThemeData(
+            style: buildElevatedButtonStyle(),
+          ),
+          appBarTheme: const AppBarTheme(
+            backgroundColor: Colors.black87,
+          ),
         ),
-        appBarTheme: const AppBarTheme(
-          backgroundColor: Colors.black87,
-        ),
+        home: const MainPage(),
       ),
-      home: const MainPage(),
     );
   }
 

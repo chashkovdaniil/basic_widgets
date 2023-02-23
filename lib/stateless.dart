@@ -3,7 +3,7 @@ import 'package:basic_widgets/my_info.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'feedbacks.dart';
+import 'modules/feedbacks/feedbacks.dart';
 import 'social_buttons.dart';
 import 'works.dart';
 
