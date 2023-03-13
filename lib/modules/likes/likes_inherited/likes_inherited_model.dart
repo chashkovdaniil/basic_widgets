@@ -31,13 +31,31 @@ class LikesInheritedModel extends InheritedModel<LikesAspect> {
       return true;
     }
 
-    final isDifferentFeedbacks = dependencies.contains(LikesAspect.likes) &&
-        amountLikes != oldWidget.amountFeedbacks;
+    final isDifferentFeedbacks = dependencies.contains(LikesAspect.feedbacks) &&
+        amountFeedbacks != oldWidget.amountFeedbacks;
 
     if (isDifferentFeedbacks) {
       return true;
     }
 
     return false;
+  }
+
+  static LikesInheritedModel? of(BuildContext context) {
+    final widget = context.findAncestorWidgetOfExactType<LikesInheritedModel>();
+
+    return widget;
+  }
+
+  static LikesInheritedModel? depend(
+    BuildContext context, [
+    LikesAspect? aspect,
+  ]) {
+    final widget =
+        context.dependOnInheritedWidgetOfExactType<LikesInheritedModel>(
+      aspect: aspect,
+    );
+
+    return widget;
   }
 }
