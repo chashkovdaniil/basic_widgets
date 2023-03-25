@@ -18,13 +18,6 @@ class LikesInheritedWidget extends InheritedWidget {
 
   static LikesInheritedWidget? of(BuildContext context) {
     final widget =
-        context.findAncestorWidgetOfExactType<LikesInheritedWidget>();
-
-    return widget;
-  }
-
-  static LikesInheritedWidget? depend(BuildContext context) {
-    final widget =
         context.dependOnInheritedWidgetOfExactType<LikesInheritedWidget>();
 
     return widget;

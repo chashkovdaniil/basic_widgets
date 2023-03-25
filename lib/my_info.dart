@@ -3,7 +3,15 @@ import 'package:flutter/material.dart';
 import 'modules/likes/likes_counter.dart';
 
 class MyInfo extends StatelessWidget {
-  const MyInfo({Key? key}) : super(key: key);
+  /// Without inherited
+  final int likes;
+
+  const MyInfo({
+    Key? key,
+
+    /// Without inherited
+    required this.likes,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +19,7 @@ class MyInfo extends StatelessWidget {
 
     return Column(
       children: [
-        const LikesCounter(),
+        LikesCounter(likes: likes),
         const SizedBox(height: 15),
         Text(
           'Чашков Даниил',

@@ -22,13 +22,6 @@ class LikesInheritedNotifier extends InheritedNotifier<_LikesNotifier> {
 
   static LikesInheritedNotifier? of(BuildContext context) {
     final widget =
-        context.findAncestorWidgetOfExactType<LikesInheritedNotifier>();
-
-    return widget;
-  }
-
-  static LikesInheritedNotifier? depend(BuildContext context) {
-    final widget =
         context.dependOnInheritedWidgetOfExactType<LikesInheritedNotifier>();
 
     return widget;

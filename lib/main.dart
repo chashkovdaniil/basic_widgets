@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'stateless.dart';
+import 'main_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +11,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final initialLikes = 10;
+    /// Without inherited
+    const initialLikes = 0;
 
     /// MODEL
     // return LikesInheritedModel(
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
     child:
     return MaterialApp(
       title: 'Basic Widgets',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
         elevatedButtonTheme: ElevatedButtonThemeData(
@@ -35,7 +37,10 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.black87,
         ),
       ),
-      home: MainPage(),
+      home: const MainPage(
+        /// Without inherited
+        likes: initialLikes,
+      ),
       // )
       // ,
     );

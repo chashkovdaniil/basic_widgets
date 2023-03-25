@@ -41,13 +41,7 @@ class LikesInheritedModel extends InheritedModel<LikesAspect> {
     return false;
   }
 
-  static LikesInheritedModel? of(BuildContext context) {
-    final widget = context.findAncestorWidgetOfExactType<LikesInheritedModel>();
-
-    return widget;
-  }
-
-  static LikesInheritedModel? depend(
+  static LikesInheritedModel? of(
     BuildContext context, [
     LikesAspect? aspect,
   ]) {

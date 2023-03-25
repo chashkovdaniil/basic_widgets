@@ -1,25 +1,34 @@
-import 'package:basic_widgets/modules/likes/likes_inherited/likes_inherited_model.dart';
 import 'package:flutter/material.dart';
 
 class LikesCounter extends StatelessWidget {
-  const LikesCounter({Key? key}) : super(key: key);
+  /// Without inherited
+  final int likes;
+
+  const LikesCounter({
+    Key? key,
+
+    /// Without inherited
+    required this.likes,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
-    /// Model
-    final likes = LikesInheritedModel.depend(
-          context,
-          LikesAspect.likes,
-        )?.amountLikes ??
-        0;
-
-    /// NOTIFIER
-    // final likes = LikesInheritedNotifier.depend(context)?.likes ?? 0;
-
+    /// Without inherited
+    /// В параметрах конструктора
     /// INHERITEDWIDGET
     // final likes = LikesInheritedWidget.of(context)?.amountLikes ?? 0;
+
+    /// NOTIFIER
+    // final likes = LikesInheritedNotifier.of(context)?.likes ?? 0;
+
+    /// Model
+    // final likes = LikesInheritedModel.of(
+    //   context,
+    //   LikesAspect.likes,
+    // )?.amountLikes ??
+    //     0;
 
     return Container(
       decoration: BoxDecoration(
