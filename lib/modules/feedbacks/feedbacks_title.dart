@@ -53,10 +53,10 @@ class _FeedbacksTitleState extends State<FeedbacksTitle> {
     final likes = widget.likes;
 
     /// INHERITEDWIDGET
-    // final likes = LikesInheritedWidget.depend(context)?.amountLikes ?? 0;
+    // final likes = LikesInheritedWidget.of(context)?.amountLikes ?? 0;
 
     /// NOTIFIER
-    // final likes = LikesInheritedNotifier.depend(context)?.likes ?? 0;
+    // final likes = LikesInheritedNotifier.of(context)?.likes ?? 0;
 
     /// MODEL
     // final likes = LikesInheritedModel.of(
