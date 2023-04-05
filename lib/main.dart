@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
 import 'main_page.dart';
+import 'modules/likes/likes_inherited/likes_notifier.dart';
+
+const initialLikes = 7;
+final likesNotifier = LikesNotifier(initialLikes);
 
 void main() {
   runApp(const MyApp());

@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 
-class _LikesNotifier extends ValueNotifier<int> {
-  _LikesNotifier([int initialLikes = 0]) : super(initialLikes);
+import '../../../main.dart';
+
+class LikesNotifier extends ValueNotifier<int> {
+  LikesNotifier([int initialLikes = 0]) : super(initialLikes);
 }
 
-class LikesInheritedNotifier extends InheritedNotifier<_LikesNotifier> {
+class LikesInheritedNotifier extends InheritedNotifier<LikesNotifier> {
   LikesInheritedNotifier({
     super.key,
     int initialLikes = 0,
     required super.child,
-  }) : super(notifier: _LikesNotifier(initialLikes));
+  }) : super(notifier: likesNotifier);
 
   int get likes => notifier?.value ?? 0;
 
